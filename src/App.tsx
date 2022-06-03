@@ -1,9 +1,16 @@
 import React from "react";
-import Auth from "./components/Auth/Auth";
+import Login from "./components/Login/Login";
+import Modal from "./components/Modal/Modal";
 
 const App = () => {
   const isAuth = false;
-  return isAuth ? <h1>Доступны все страницы</h1> : <Auth />;
+  return isAuth ? (
+    <h1>Доступны все страницы</h1>
+  ) : (
+    <Modal title={"Войти"}>
+      <Login />
+    </Modal>
+  );
 };
 
 export default App;

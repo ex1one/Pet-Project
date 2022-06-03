@@ -1,4 +1,5 @@
 import React, { DetailedHTMLProps, FC, HTMLAttributes } from "react";
+import styles from "./button.module.scss";
 
 interface IButtonProps
   extends DetailedHTMLProps<
@@ -9,7 +10,11 @@ interface IButtonProps
 }
 
 const Button: FC<IButtonProps> = ({ title, ...props }) => {
-  return <button {...props}>{title}</button>;
+  return (
+    <button className={styles.button} {...props}>
+      {title}
+    </button>
+  );
 };
 
 export default Button;

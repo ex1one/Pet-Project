@@ -1,5 +1,5 @@
 import Home from "../components/Home/Home";
-import Auth from "../components/Auth/Auth";
+import Login from "../components/Login/Login";
 import Registration from "../components/Registration/Registration";
 
 export interface IRoute {
@@ -20,7 +20,7 @@ export const routes: IRoute[] = [
   },
   {
     path: ERoutesNames.LOGIN,
-    element: Auth,
+    element: Login,
   },
   {
     path: ERoutesNames.REG,

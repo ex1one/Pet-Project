@@ -1,7 +1,7 @@
 import React from "react";
 
 const Registration = () => {
-  return <div></div>;
+  return <div>dadada</div>;
 };
 
 export default Registration;
