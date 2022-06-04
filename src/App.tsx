@@ -1,14 +1,15 @@
 import React from "react";
 import Login from "./components/Login/Login";
 import Modal from "./components/Modal/Modal";
+import Registration from "./components/Registration/Registration";
 
 const App = () => {
   const isAuth = false;
   return isAuth ? (
-    <h1>Доступны все страницы</h1>
+    <h1>Доступ ко всему</h1>
   ) : (
-    <Modal title={"Войти"}>
-      <Login />
+    <Modal>
+      <Registration />
     </Modal>
   );
 };

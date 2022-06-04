@@ -15,11 +15,9 @@ const Login = () => {
           Зарегистрироваться
         </Link>
       </div>
-      <div className={styles.wrapperInputs}>
-        <Input type="text" placeholder="Имя или почта" />
-        <Input type="text" placeholder="Пароль" />
-      </div>
-      <Button title="Войти" />
+      <Input type="text" placeholder="Имя или почта" />
+      <Input type="text" placeholder="Пароль" />
+      <Button type={"submit"} title="Войти" variant={"yellow"} />
     </>
   );
 };

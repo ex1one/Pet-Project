@@ -1,0 +1,83 @@
+.reg{
+  text-align: center;
+
+  .title{
+    font-size: 32px;
+    margin-bottom: 50px;
+    align-items: center;
+    font-weight: 700;
+
+    .login{
+      text-decoration: none;
+      margin-right: 50px;
+      color: #7F86E8;
+    }
+
+    .signUp{
+      text-decoration: none;
+      color: #fff;
+      font-size: 52px;
+    }
+  }
+
+  .infoAboutUser{
+    display: flex;
+    justify-content: center;
+
+    & input:nth-child(1) {
+      margin-right: 10px;
+    }
+  }
+
+  .privateInfo{
+    display: flex;
+    justify-content: center;
+
+
+    & input:nth-child(1) {
+      margin-right: 10px;
+    }
+  }
+
+  .terms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    .checkBox {
+      cursor: pointer;
+      opacity: 0;
+
+      &:checked+label::before{
+        background-color: #fff;
+      }
+
+    }
+
+    .checkBoxLabel {
+      cursor: pointer;
+      align-items: center;
+      position: relative;
+
+      &::before{
+        content: '';
+        position: absolute;
+        top: 25%;
+        left: -7%;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 1px solid #adb5bd;
+        border-radius: 0.25em;
+        margin-right: 0.5em;
+        background-size: 50% 50%;
+      }
+
+      & span {
+        color: #7F86E8;
+      }
+
+    }
+  }
+}

@@ -1,17 +1,27 @@
-import React, { DetailedHTMLProps, FC, HTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, FC } from "react";
 import styles from "./button.module.scss";
 
 interface IButtonProps
   extends DetailedHTMLProps<
-    HTMLAttributes<HTMLButtonElement>,
+    ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
   title: string;
+  variant: "yellow" | "purple";
+  type: "submit" | "reset" | "button";
 }
 
-const Button: FC<IButtonProps> = ({ title, ...props }) => {
+const Button: FC<IButtonProps> = ({ title, variant, type, ...props }) => {
   return (
-    <button className={styles.button} {...props}>
+    <button
+      type={type}
+      className={
+        variant == "yellow"
+          ? [styles.button, styles.yellow].join(" ")
+          : [styles.button, styles.purple].join(" ")
+      }
+      {...props}
+    >
       {title}
     </button>
   );

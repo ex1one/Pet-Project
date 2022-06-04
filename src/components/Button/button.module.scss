@@ -1,8 +1,24 @@
 .button{
-  padding: 19px 133px;
-  background-color: #FFDB59;
   box-shadow: 0 10px 20px rgba(255, 219, 89, 0.25);
   border-radius: 50px;
   width: 320px;
   height: 60px;
+  cursor: pointer;
 }
+
+.yellow {
+  background-color: #FFDB59;
+  box-shadow: 0 10px 20px rgba(255, 219, 89, 0.25);
+  color: #181A20;
+}
+
+.purple {
+  background-color: #7F86E8;
+  box-shadow: 0 10px 20px rgba(127, 134, 232, 0.25);
+  color: #fff;
+}
+
+
+
+
+

@@ -4,10 +4,9 @@ import Close from "../Close/Close";
 
 interface IModalProps {
   children: ReactNode;
-  title?: string;
 }
 
-const Modal: FC<IModalProps> = ({ children, title }) => {
+const Modal: FC<IModalProps> = ({ children }) => {
   return (
     <div className={styles.modal}>
       <Close />
