@@ -1,5 +1,4 @@
 import React from "react";
-import Login from "./components/Login/Login";
 import Modal from "./components/Modal/Modal";
 import Registration from "./components/Registration/Registration";
 
