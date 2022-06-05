@@ -3,9 +3,9 @@ import { IAuthState, IUser } from "./types";
 
 const initialState: IAuthState = {
   user: null,
-  isAuth: false,
   error: null,
   isLoading: false,
+  authToken: "",
 };
 
 const authReducer = createSlice({
@@ -14,7 +14,6 @@ const authReducer = createSlice({
   reducers: {
     auth: (state, action: PayloadAction<IUser>) => {
       state.user = action.payload;
-      state.isAuth = true;
       state.error = null;
       state.isLoading = false;
     },
