@@ -11,6 +11,7 @@ const Registration = () => {
     email: "",
     password: "",
   });
+  console.log(userData);
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target.name;
