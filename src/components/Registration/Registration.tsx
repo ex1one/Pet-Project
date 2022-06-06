@@ -4,6 +4,8 @@ import styles from "./registration.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import authorization from "../../API/Auth/Auth";
+import { useDispatch } from "react-redux";
+import { Authorization } from "../../store/reducers/auth";
 
 const Registration = () => {
   const [userData, setUserData] = useState({
@@ -11,7 +13,7 @@ const Registration = () => {
     email: "",
     password: "",
   });
-  console.log(userData);
+  const dispatch = useDispatch();
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target.name;
@@ -32,7 +34,9 @@ const Registration = () => {
 
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    authorization(userData);
+    authorization(userData).then((response) => {
+      dispatch(Authorization(response.data));
+    });
   };
 
   return (
