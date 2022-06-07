@@ -1,8 +1,8 @@
 import * as yup from "yup";
 
 const AuthFormValidate = yup.object().shape({
-  username: yup.string().required("Name is required"),
-  email: yup.string().email().required("Email is required"),
+  username: yup.string().required("Username is required"),
+  email: yup.string().required("Email is required").email(),
   password: yup
     .string()
     .required("Password is required")
@@ -10,7 +10,7 @@ const AuthFormValidate = yup.object().shape({
     .max(30, "Password cannot exceed more than 30 characters"),
   confirmPassword: yup
     .string()
-    .required("Name is required")
+    .required("confirmPassword is required")
     .oneOf([yup.ref("password")], "Password do not match"),
   terms: yup.bool().oneOf([true], "Please agree"),
 });

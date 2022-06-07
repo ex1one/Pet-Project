@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./registration.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
@@ -19,28 +19,13 @@ const Registration = () => {
     confirmPassword: "",
   });
   const dispatch = useDispatch();
-
-  // const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const target = event.target.name;
-  //   switch (target) {
-  //     case "username":
-  //       setUserData({ ...userData, username: event.target.value });
-  //       break;
-  //     case "email":
-  //       setUserData({ ...userData, email: event.target.value });
-  //       break;
-  //     case "password":
-  //       setUserData({ ...userData, password: event.target.value });
-  //       break;
-  //     default:
-  //       return target;
-  //   }
-  // };
+  const navigate = useNavigate();
 
   const submit: SubmitHandler<IAuth> = () => {
     authorization(userData).then((response) => {
       dispatch(Authorization(response.data));
     });
+    navigate("/");
     reset();
   };
 
@@ -50,7 +35,7 @@ const Registration = () => {
     formState: { errors },
     reset,
   } = useForm<IAuth>({
-    mode: "onTouched",
+    mode: "onSubmit",
     resolver: yupResolver(AuthFormValidate),
   });
 

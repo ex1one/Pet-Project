@@ -20,15 +20,4 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
   },
 );
 
-// const Input: FC<IInputProps> = ({ type, placeholder, ...props }) => {
-//   return (
-//     <input
-//       type={type}
-//       placeholder={placeholder}
-//       className={styles.input}
-//       {...props}
-//     />
-//   );
-// };
-
 export default Input;

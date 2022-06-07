@@ -11,9 +11,9 @@ const authReducer = createSlice({
   initialState,
   reducers: {
     Authorization: (state, action: PayloadAction<IAuthState>) => {
-      console.log(action);
-      state.user = action.payload.user;
+      console.log(action.payload);
       state.token = action.payload.token;
+      state.user = action.payload.user;
     },
   },
 });
