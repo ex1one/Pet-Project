@@ -3,9 +3,8 @@ import styles from "./input.module.scss";
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: string;
-  placeholder: string;
-  name: string;
-  onChange: (value: React.ChangeEvent<HTMLInputElement>) => string | undefined;
+  placeholder?: string;
+  name?: string;
 }
 
 const Input: FC<IInputProps> = ({
