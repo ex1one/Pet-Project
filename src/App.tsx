@@ -5,13 +5,13 @@ import useTypedSelector from "./hooks/useTypedSelector";
 import selectors from "./store/selectors/selectors";
 
 const App = () => {
-  const { token, user } = useTypedSelector(selectors.auth);
+  const { jwt, user } = useTypedSelector(selectors.auth);
 
   useEffect(() => {
-    console.log(user, token);
-  }, [token, user]);
+    console.log(user, jwt);
+  }, [jwt, user]);
 
-  return token ? (
+  return jwt ? (
     <h1>Доступ ко всему</h1>
   ) : (
     <Modal>

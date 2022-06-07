@@ -9,5 +9,5 @@ export interface IUser {
 
 export interface IAuthState {
   user: IUser | null;
-  token: string | null;
+  jwt: string | null;
 }

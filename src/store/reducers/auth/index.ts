@@ -3,7 +3,7 @@ import { IAuthState } from "./types";
 
 const initialState: IAuthState = {
   user: null,
-  token: null,
+  jwt: null,
 };
 
 const authReducer = createSlice({
@@ -12,7 +12,7 @@ const authReducer = createSlice({
   reducers: {
     Authorization: (state, action: PayloadAction<IAuthState>) => {
       console.log(action.payload);
-      state.token = action.payload.token;
+      state.jwt = action.payload.jwt;
       state.user = action.payload.user;
     },
   },
