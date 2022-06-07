@@ -9,7 +9,7 @@ import { Authorization } from "../../store/reducers/auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IAuth } from "../../API/Auth/types";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { AuthFormValidate } from "../../schemes/AuthorizationValidation";
+import AuthFormValidate from "../../schemes/AuthorizationValidation";
 
 const Registration = () => {
   const [userData, setUserData] = useState<IAuth>({
@@ -20,22 +20,22 @@ const Registration = () => {
   });
   const dispatch = useDispatch();
 
-  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const target = event.target.name;
-    switch (target) {
-      case "username":
-        setUserData({ ...userData, username: event.target.value });
-        break;
-      case "email":
-        setUserData({ ...userData, email: event.target.value });
-        break;
-      case "password":
-        setUserData({ ...userData, password: event.target.value });
-        break;
-      default:
-        return target;
-    }
-  };
+  // const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const target = event.target.name;
+  //   switch (target) {
+  //     case "username":
+  //       setUserData({ ...userData, username: event.target.value });
+  //       break;
+  //     case "email":
+  //       setUserData({ ...userData, email: event.target.value });
+  //       break;
+  //     case "password":
+  //       setUserData({ ...userData, password: event.target.value });
+  //       break;
+  //     default:
+  //       return target;
+  //   }
+  // };
 
   const submit: SubmitHandler<IAuth> = () => {
     authorization(userData).then((response) => {
@@ -50,7 +50,7 @@ const Registration = () => {
     formState: { errors },
     reset,
   } = useForm<IAuth>({
-    mode: "onBlur",
+    mode: "onTouched",
     resolver: yupResolver(AuthFormValidate),
   });
 
@@ -67,10 +67,16 @@ const Registration = () => {
       <div className={styles.infoAboutUser}>
         <div className={styles.wrapper}>
           <Input
-            value={userData.username}
             type={"text"}
             placeholder={"Имя или ник"}
-            {...register("username")}
+            {...register("username", {
+              onChange: (event) => {
+                setUserData({
+                  ...userData,
+                  username: event.target.value,
+                });
+              },
+            })}
           />
           {errors.username?.message && (
             <span className={styles.alerts}>{errors.username?.message}</span>
@@ -78,10 +84,16 @@ const Registration = () => {
         </div>
         <div className={styles.wrapper}>
           <Input
-            value={userData.email}
             type={"email"}
             placeholder={"Электронная почта"}
-            {...register("email")}
+            {...register("email", {
+              onChange: (event) => {
+                setUserData({
+                  ...userData,
+                  email: event.target.value,
+                });
+              },
+            })}
           />
           {errors.email?.message && (
             <span className={styles.alerts}>{errors.email?.message}</span>
@@ -91,10 +103,15 @@ const Registration = () => {
       <div className={styles.privateInfo}>
         <div className={styles.wrapper}>
           <Input
-            value={userData.password}
             type={"password"}
             placeholder={"Пароль"}
-            {...register("password")}
+            {...register("password", {
+              onChange: (event) =>
+                setUserData({
+                  ...userData,
+                  password: event.target.value,
+                }),
+            })}
           />
           {errors.password?.message && (
             <span className={styles.alerts}>{errors.password?.message}</span>
@@ -104,7 +121,14 @@ const Registration = () => {
           <Input
             type={"password"}
             placeholder={"Подтвердить пароль"}
-            {...register("confirmPassword")}
+            {...register("confirmPassword", {
+              onChange: (event) => {
+                setUserData({
+                  ...userData,
+                  confirmPassword: event.target.value,
+                });
+              },
+            })}
           />
           {errors.confirmPassword?.message && (
             <span className={styles.alerts}>
