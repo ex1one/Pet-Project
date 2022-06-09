@@ -24,6 +24,17 @@
     display: flex;
     justify-content: center;
 
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .alerts {
+        text-align: start;
+        color: #7F86E8;
+        margin: -10px 0 20px 10px;
+      }
+    }
+
     & input:nth-child(1) {
       margin-right: 10px;
     }
@@ -33,6 +44,17 @@
     display: flex;
     justify-content: center;
 
+
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+
+      .alerts {
+        text-align: start;
+        color: #7F86E8;
+        margin: -10px 0 20px 10px;
+      }
+    }
 
     & input:nth-child(1) {
       margin-right: 10px;
@@ -44,6 +66,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    flex-direction: column;
 
     .checkBox {
       cursor: pointer;
@@ -78,7 +101,12 @@
       & span {
         color: #7F86E8;
       }
+    }
 
+    .alertTerms {
+      margin-bottom: 10px;
+      font-size: 25px;
+      color: #616D85;
     }
   }
 }

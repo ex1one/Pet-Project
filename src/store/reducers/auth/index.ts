@@ -1,25 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAuthState, IUser } from "./types";
+import { IAuthState } from "./types";
 
 const initialState: IAuthState = {
   user: null,
-  error: null,
-  isLoading: false,
-  authToken: "",
+  jwt: null,
 };
 
 const authReducer = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    auth: (state, action: PayloadAction<IUser>) => {
-      state.user = action.payload;
-      state.error = null;
-      state.isLoading = false;
+    Authorization: (state, action: PayloadAction<IAuthState>) => {
+      state.jwt = action.payload.jwt;
+      state.user = action.payload.user;
     },
   },
 });
 
-export const { auth } = authReducer.actions;
+export const { Authorization } = authReducer.actions;
 
 export default authReducer.reducer;

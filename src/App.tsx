@@ -1,15 +1,17 @@
-import React from "react";
-import Modal from "./components/Modal/Modal";
-import Registration from "./components/Registration/Registration";
+import React, { useEffect } from "react";
+import AppRoutes from "./components/AppRoutes/AppRoutes";
+import Header from "./components/Header/Header";
 
 const App = () => {
-  const isAuth = false;
-  return isAuth ? (
-    <h1>Доступ ко всему</h1>
-  ) : (
-    <Modal>
-      <Registration />
-    </Modal>
+  useEffect(() => {
+    // Логика по проверке авторизации
+  }, []);
+
+  return (
+    <>
+      <Header />
+      <AppRoutes />
+    </>
   );
 };
 

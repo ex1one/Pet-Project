@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #181A20;
+  align-items: center;
+  max-height: 79px;
+
+  .headerContent {
+    max-width: 1310px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    .wrapperLogo{
+      
+      & img {
+        cursor: pointer;
+      }
+    }
+  }
+}

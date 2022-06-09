@@ -1,5 +1,6 @@
 .input {
   display: block;
+  position: relative;
   width: 295px;
   font-size: 17px;
   color: #fff;
@@ -9,4 +10,13 @@
   padding-left: 25px;
   border: none;
   margin-bottom: 20px;
+}
+
+.password {
+  position: absolute;
+  cursor: pointer;
+  left: 47%;
+  height: 25px;
+  top: 51%;
+  width: 25px;
 }

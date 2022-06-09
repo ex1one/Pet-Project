@@ -1,14 +1,13 @@
 export interface IUser {
-  displayName: string;
-  id: number;
+  blocked: boolean;
+  confirmed: boolean;
+  createdAt: string;
   email: string;
-  photoUrl: string;
-  regDate: string;
+  id: number;
+  username: string;
 }
 
 export interface IAuthState {
   user: IUser | null;
-  error: Error | null;
-  isLoading: boolean;
-  authToken: string | null;
+  jwt: string | null;
 }
