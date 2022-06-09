@@ -1,20 +1,19 @@
-import React, { FC, ReactNode, useEffect } from "react";
+import React, { FC, ReactNode } from "react";
 import Header from "./components/Header/Header";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import Layout from "./components/Layout/Layout";
 
 interface IApp {
   children: ReactNode;
 }
 
 const App: FC<IApp> = ({ children }) => {
-  useEffect(() => {
-    // Логика по проверке авторизации
-  }, []);
-
   return (
     <ThemeProvider>
-      <Header />
-      {children}
+      <Layout>
+        <Header />
+        {children}
+      </Layout>
     </ThemeProvider>
   );
 };

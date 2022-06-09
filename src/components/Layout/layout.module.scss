@@ -1,0 +1,13 @@
+$dark: #181A20;
+$light: #fff;
+
+
+.layout {
+  background-color: $dark;
+  height: 100vh;
+}
+
+.layout .light {
+  background-color: $light;
+  height: 100vh;
+}
