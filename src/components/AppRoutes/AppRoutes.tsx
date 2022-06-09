@@ -10,19 +10,19 @@ import {
 
 const AppRoutes = () => {
   const { user } = useTypedSelector(selectors.auth);
-  return !user ? (
+  return user ? (
     <Routes>
-      {publicRoutes.map((route) => (
+      {privateRoutes.map((route) => (
         <Route key={route.path} path={route.path} element={<route.element />} />
       ))}
       <Route path="*" element={<Navigate to={RouteNames.HOME} />} />
     </Routes>
   ) : (
     <Routes>
-      {privateRoutes.map((route) => (
+      {publicRoutes.map((route) => (
         <Route key={route.path} path={route.path} element={<route.element />} />
       ))}
-      <Route path="*" element={<Navigate to={RouteNames.HOME} />} />
+      <Route path="*" element={<Navigate to={RouteNames.AUTH} />} />
     </Routes>
   );
 };

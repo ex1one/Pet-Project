@@ -9,7 +9,7 @@ import { Authorization } from "../../store/reducers/auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IAuth } from "../../API/Auth/types";
 import { yupResolver } from "@hookform/resolvers/yup";
-import AuthFormValidate from "../../schemes/AuthorizationValidation";
+import AuthFormValidate from "../../schemes/AuthValidation";
 
 const Registration = () => {
   const [userData, setUserData] = useState<IAuth>({
@@ -45,7 +45,7 @@ const Registration = () => {
         <Link to={"/login"} className={styles.login}>
           Войти
         </Link>
-        <Link to={"/reg"} className={styles.signUp}>
+        <Link to={"/auth"} className={styles.signUp}>
           Зарегистрироваться
         </Link>
       </div>
