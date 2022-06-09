@@ -1,22 +1,17 @@
 import React, { useEffect } from "react";
-import Modal from "./components/Modal/Modal";
-import Registration from "./components/Registration/Registration";
-import useTypedSelector from "./hooks/useTypedSelector";
-import selectors from "./store/selectors/selectors";
+import AppRoutes from "./components/AppRoutes/AppRoutes";
+import Header from "./components/Header/Header";
 
 const App = () => {
-  const { jwt, user } = useTypedSelector(selectors.auth);
-
   useEffect(() => {
-    console.log(user, jwt);
-  }, [jwt, user]);
+    // Логика по проверке авторизации
+  }, []);
 
-  return jwt ? (
-    <h1>Доступ ко всему</h1>
-  ) : (
-    <Modal>
-      <Registration />
-    </Modal>
+  return (
+    <>
+      <Header />
+      <AppRoutes />
+    </>
   );
 };
 

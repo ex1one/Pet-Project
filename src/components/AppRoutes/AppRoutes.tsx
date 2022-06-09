@@ -10,7 +10,7 @@ import {
 
 const AppRoutes = () => {
   const { user } = useTypedSelector(selectors.auth);
-  return user ? (
+  return !user ? (
     <Routes>
       {publicRoutes.map((route) => (
         <Route key={route.path} path={route.path} element={<route.element />} />

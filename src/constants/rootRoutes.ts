@@ -10,7 +10,7 @@ interface IRoute {
 
 export enum RouteNames {
   HOME = "/",
-  LOGIN = "/log",
+  LOGIN = "/login",
   AUTH = "/auth",
   PROFILE = "/profile/:id",
 }
