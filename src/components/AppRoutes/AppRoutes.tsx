@@ -1,16 +1,17 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import useTypedSelector from "../../hooks/useTypedSelector";
-import selectors from "../../store/selectors/selectors";
 import {
   privateRoutes,
   publicRoutes,
   RouteNames,
 } from "../../constants/rootRoutes";
+import useTypedSelector from "../../hooks/useTypedSelector";
+import selectors from "../../store/selectors/selectors";
 
 const AppRoutes = () => {
-  const { user } = useTypedSelector(selectors.auth);
-  return user ? (
+  const { user, jwt } = useTypedSelector(selectors.auth);
+
+  return jwt ? (
     <Routes>
       {privateRoutes.map((route) => (
         <Route key={route.path} path={route.path} element={<route.element />} />

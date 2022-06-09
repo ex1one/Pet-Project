@@ -10,6 +10,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { IAuth } from "../../API/Auth/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import AuthFormValidate from "../../schemes/AuthValidation";
+import Cookies from "js-cookie";
 
 const Registration = () => {
   const [userData, setUserData] = useState<IAuth>({
@@ -23,6 +24,7 @@ const Registration = () => {
 
   const submit: SubmitHandler<IAuth> = () => {
     authorization(userData).then((response) => {
+      Cookies.set("token", response.data.jwt);
       dispatch(Authorization(response.data));
     });
     navigate("/");

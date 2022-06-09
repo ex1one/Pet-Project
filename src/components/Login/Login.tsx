@@ -31,7 +31,6 @@ const Login = () => {
 
   const submit: SubmitHandler<ILogin> = () => {
     login(userData).then((response) => {
-      console.log(response);
       dispatch(signIn(response.data));
     });
     navigate("/");
