@@ -1,3 +1,8 @@
+$root{
+  --bg-dark: #212121;
+  --bg-light: #fff;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Exo 2', 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,7 +10,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
 }
 
 code {

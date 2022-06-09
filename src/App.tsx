@@ -1,17 +1,21 @@
-import React, { useEffect } from "react";
-import AppRoutes from "./components/AppRoutes/AppRoutes";
+import React, { FC, ReactNode, useEffect } from "react";
 import Header from "./components/Header/Header";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
-const App = () => {
+interface IApp {
+  children: ReactNode;
+}
+
+const App: FC<IApp> = ({ children }) => {
   useEffect(() => {
     // Логика по проверке авторизации
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <Header />
-      <AppRoutes />
-    </>
+      {children}
+    </ThemeProvider>
   );
 };
 
