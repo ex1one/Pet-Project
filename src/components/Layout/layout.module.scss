@@ -5,9 +5,11 @@ $light: #fff;
 .layout {
   background-color: $dark;
   height: 100vh;
+  width: 100vw;
 }
 
 .layout .light {
   background-color: $light;
   height: 100vh;
+  width: 100vw;
 }

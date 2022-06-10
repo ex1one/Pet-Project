@@ -1,0 +1,26 @@
+.menu {
+  background-color: #1E2127;
+  z-index: 53;
+  width: 273px;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: -15px;
+  left: 25%;
+
+  .item {
+    color: #616D85;
+    list-style-type: none;
+    font-size: 18px;
+    margin-bottom: 15px;
+
+    & .itemLink {
+      text-decoration: none;
+      color: #616D85;
+
+      &:hover {
+        color: #FFDB59;
+      }
+    }
+  }
+}

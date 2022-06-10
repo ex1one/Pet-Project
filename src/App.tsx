@@ -3,11 +3,11 @@ import Header from "./components/Header/Header";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import Layout from "./components/Layout/Layout";
 
-interface IApp {
+interface IAppProps {
   children: ReactNode;
 }
 
-const App: FC<IApp> = ({ children }) => {
+const App: FC<IAppProps> = ({ children }) => {
   return (
     <ThemeProvider>
       <Layout>
