@@ -9,9 +9,10 @@ $light: #fff;
   align-items: center;
   padding: 20px;
 
-  & .light {
+  .light {
     background-color: $light;
   }
+
 
   .container {
     max-width: 1310px;

@@ -2,13 +2,13 @@ $dark: #181A20;
 $light: #fff;
 
 
-.layout {
+.dark {
   background-color: $dark;
   height: 100vh;
   width: 100vw;
 }
 
-.layout .light {
+.light {
   background-color: $light;
   height: 100vh;
   width: 100vw;
